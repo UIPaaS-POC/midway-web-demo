@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="renderer" content="webkit">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="email=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel="dns-prefetch" href="//g.alicdn.com" />
+  <link rel="dns-prefetch" href="//at.alicdn.com" />
+  <link rel="dns-prefetch" href="//img.alicdn.com" />
+  <link data-rh="true" rel="icon" href="/help/img/favicon.ico">
+  <title>LAB 预览</title>
+  <link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css" />
+  <!-- <link rel="stylesheet" href="//uipaas-assets.com/dev/legao-comp/lab/0.1.0/web.css"> -->
+  <style type="text/css">
+    body {
+      -webkit-overflow-scrolling: touch;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="App">
+    <style type="text/css">
+    .preview-page-loading {
+      width: 48px;
+      height: 48px;
+      background: url('https://g.alicdn.com/uxcore/pic/loading.svg') center no-repeat;
+      background-size: contain;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      margin-top: -24px;
+      margin-left: -24px;
+    }
+  </style>
+  <div class="preview-page-loading"></div>
+  </div>
+
+  <script>
+    window.pageConfig = {
+      device: 'web',
+      appKey: "<%= appKey %>",
+      // appType: "<%= appKey %>",
+      oneapiEnv: 'mocks' // oneapi 预览时，是调用 mock接口还是真实接口
+    }
+    window.g_config = {
+      // 当前通过手动触发渲染，暂时不会用到
+      "fetchUrl": "http://uipaas-poc2-daily.default-2.ingress.dxsp.tech/uipaas/query/formdesign/getLatestFormWithNavNew.jsonp?appKey=<%= appKey %>&version=0.1.0",
+      "assetsFetchUrl": "http://uipaas-poc2-daily.default-2.ingress.dxsp.tech/uipaas/query/app/assets.jsonp?appKey=<%= appKey %>&version=0.1.0",
+      "appKey": "<%= appKey %>",
+      "id": "App",
+      "index": "u5ug5",
+      // 实时加载 schema
+      "isSinglePage": true,
+      "isDynamicSchema": true,
+      // "historyType": "HASH",
+      "historyType": "BROWSER",
+      "routerBaseName": '/lab',
+      // 当前页面 路由字段
+      // "pathKey": "id",
+      "locale": "zh_CN",
+      "navConfig": {
+          "showNav": true,
+          "showTodoTasks": false,
+          "showPersonInfo": false,
+          "showMsg": false,
+          "navLogo": "https://tianshu.alicdn.com/052a190e-c961-4afe-aa4c-49ee9722952d.svg"
+      },
+    };
+  </script>
+  <script crossorigin="anonymous"
+    src="//polyfill.alicdn.com/s/polyfill.min.js?features=default,es2017,es6,fetch,RegeneratorRuntime"></script>
+
+  <script crossorigin="anonymous" src="//g.alicdn.com/code/lib/moment.js/2.24.0/moment-with-locales.min.js"></script>
+  <script crossorigin="anonymous"
+    src="//g.alicdn.com/code/lib/??react/16.13.0/umd/react.production.min.js,react-dom/16.13.0/umd/react-dom.production.min.js,prop-types/15.7.2/prop-types.js,react-router/5.1.2/react-router.min.js,react-router-dom/5.1.2/react-router-dom.min.js"></script>
+  <script crossorigin="anonymous"
+    src="//g.alicdn.com/platform/c/??react15-polyfill/0.0.1/dist/index.js,lie/3.0.2/dist/lie.polyfill.min.js,lodash/4.6.1/lodash.min.js,immutable/3.7.6/dist/immutable.min.js,highcharts/5.0.12/highcharts.js,highcharts/5.0.12/highcharts-more.js,highcharts/5.0.12/modules/map.js,highcharts/5.0.12/modules/funnel.js,natty-storage/2.0.2/dist/natty-storage.min.js,natty-fetch/2.6.0/dist/natty-fetch.pc.min.js,tinymce/4.2.5/tinymce-full.js"></script>
+
+  <script crossorigin="anonymous" src="//g.alicdn.com/vision/render-engine/7.5.23/render-engine.min.js"></script>
+
+
+  <!-- 这里不提供应用唯一，统一使用 LAB 基准  -->
+  <script crossorigin="anonymous" src="//uipaas-assets.com/dev/legao-comp/lab/0.1.0/web.js"></script>
+
+</body>
+
+</html>
